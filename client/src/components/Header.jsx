@@ -2,19 +2,13 @@ import { Navbar, TextInput, Button } from 'flowbite-react'
 import { Link, useLocation } from 'react-router-dom'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FaMoon } from 'react-icons/fa'
+import Logo from './Logo'
 export default function Header() {
     const path = useLocation().pathname
     return (
-        <Navbar className='border-b-2'>
-            <Navbar.Toggle />
-            <Navbar.Brand as={Link} to='/'>
-                <span to='/' className='self-center whitespace-nowrap text-sm sm:text-xl
-                font-semibold dark:text-white'>
-                    <span className='px-2 py-1 bg-gradient-to-br 
-                 from-purple-500 via-indigo-500 to-sky-500 
-                rounded-lg text-white'>Aurora's</span>
-                    Blog
-                </span>
+        <Navbar fluid className='border-b-2'>
+            <Navbar.Brand as={Link} to='/' className='font-semibold ml-2 sm:ml-6 text-sm sm:text-xl whitespace-nowrap'>
+                <Logo/>
             </Navbar.Brand>
             <form>
                 <TextInput
@@ -49,6 +43,7 @@ export default function Header() {
                     Project
                 </Navbar.Link>
             </Navbar.Collapse>
+            <Navbar.Toggle />
         </Navbar>
     )
 }
